@@ -34,7 +34,7 @@ allprojects {
 Add the dependency to app build.gradle
 ``` gradle
 dependencies {
-      implementation 'implementation 'com.github.Chandra-Sekhar-Bala:simple-gauge-android:1.1.0'
+      implementation 'com.github.Chandra-Sekhar-Bala:simple-gauge-android:1.1.0'
 }
 ```
 
