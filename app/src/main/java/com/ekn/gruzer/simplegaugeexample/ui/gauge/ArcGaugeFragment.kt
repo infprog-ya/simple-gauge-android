@@ -69,6 +69,8 @@ class ArcGaugeFragment : Fragment() {
         arcGauge.addRange(range3)
         arcGauge.isUseRangeBGColor= true
         arcGauge.valueColor = Color.BLUE
+        arcGauge.setGaugeBGWidth(50f)
+        arcGauge.setGaugeWidth(20f)
 
 
         arcGauge.setFormatter(ValueFormatter {

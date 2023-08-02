@@ -184,8 +184,12 @@ public class FullGauge extends AbstractGauge {
         return gaugeBGWidth;
     }
 
-    protected void setGaugeBGWidth(float gaugeBGWidth) {
+    public void setGaugeWidth(float gaugeBGWidth) {
         this.gaugeBGWidth = gaugeBGWidth;
+    }
+
+    public void setGaugeBGWidth(float gaugeBGWidth) {
+        getGaugeBackGround().setStrokeWidth(gaugeBGWidth);
     }
 
     public boolean isDisplayValuePoint() {
