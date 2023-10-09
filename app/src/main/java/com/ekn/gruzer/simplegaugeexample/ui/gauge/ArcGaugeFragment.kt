@@ -47,21 +47,21 @@ class ArcGaugeFragment : Fragment() {
         val range = Range()
         range.color = Color.parseColor("#ce0000")
         range.from = 0.0
-        range.to = 50.0
+        range.to = 250.0
 
         val range2 = Range()
         range2.color = Color.parseColor("#E3E500")
-        range2.from = 50.0
-        range2.to = 100.0
+        range2.from = 250.0
+        range2.to = 500.0
 
         val range3 = Range()
         range3.color = Color.parseColor("#00b20b")
-        range3.from = 100.0
-        range3.to = 150.0
+        range3.from = 500.0
+        range3.to = 1000.0
 
-        arcGauge.minValue= 10.0
-        arcGauge.maxValue = 150.0
-        arcGauge.value = 35.0
+        arcGauge.minValue= 0.0
+        arcGauge.maxValue = 1000.0
+        arcGauge.value = 0.0
 
 
         arcGauge.addRange(range)
@@ -70,16 +70,20 @@ class ArcGaugeFragment : Fragment() {
         arcGauge.isUseRangeBGColor= true
         arcGauge.valueColor = Color.BLUE
         arcGauge.setGaugeBGWidth(50f)
-        arcGauge.setGaugeWidth(20f)
-
-
+        arcGauge.setGaugeWidth(50f)
+        arcGauge.setPadding(0,16,0,0)
+        arcGauge.enableAnimation(true)
+        arcGauge.displayValuePoint = true
+        arcGauge.setBackgroundColor(Color.TRANSPARENT)
         arcGauge.setFormatter(ValueFormatter {
             it.toInt().toString()
         })
 
 
         arcgauge_update_btn.setOnClickListener {
-            arcGauge.value = arcgauge_value_ed.text.toString().toDouble()
+            if (arcgauge_value_ed.text.toString().isNotEmpty()) {
+                arcGauge.value = arcgauge_value_ed.text.toString().toDouble()
+            }
         }
 
 

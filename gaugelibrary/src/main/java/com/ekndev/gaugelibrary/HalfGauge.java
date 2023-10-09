@@ -29,7 +29,7 @@ public class HalfGauge extends AbstractGauge {
     private float startAngle = 210;
     private float sweepAngle = 120;
     private Integer needleAngleNext;
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler(this.getContext().getMainLooper());
     private boolean enableBackGroundShadow = true;
     private boolean enableNeedleShadow = true;
     private boolean enableAnimation = true;
@@ -37,7 +37,7 @@ public class HalfGauge extends AbstractGauge {
     private int maxValueTextColor = Color.GRAY;
 
 
-    private Runnable runnable = new Runnable() {
+    private final Runnable runnable = new Runnable() {
         @Override
         public void run() {
             invalidate();

@@ -26,8 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract class AbstractGauge extends View {
-
-
     private List<Range> ranges = new ArrayList<>();
     private double value = 0;
     private double minValue = 0;
@@ -45,7 +43,6 @@ abstract class AbstractGauge extends View {
     private boolean useRangeBGColor = false;
     private ValueFormatter formatter = new ValueFormatterImpl();
 
-
     public AbstractGauge(Context context) {
         super(context);
     }
@@ -62,13 +59,11 @@ abstract class AbstractGauge extends View {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         getScaleRatio();
     }
-
 
     protected RectF getRectF() {
         if (rectF == null)
@@ -79,8 +74,8 @@ abstract class AbstractGauge extends View {
     protected Float getScaleRatio() {
         int measuredHeight = getMeasuredHeight();
         int measuredWidth = getMeasuredWidth();
-        float minSize = Math.min(measuredHeight, measuredWidth) / 1f;
-        float maxSize = Math.max(measuredHeight, measuredWidth) / 1f;
+        float minSize = Math.min(measuredHeight, measuredWidth);
+        float maxSize = Math.max(measuredHeight, measuredWidth);
         float f1 = minSize / 400f;
         float f2 = minSize / 200f;
         if (measuredWidth > measuredHeight) {
@@ -93,13 +88,11 @@ abstract class AbstractGauge extends View {
         return maxSize / 400f;
     }
 
-
     public void addRange(Range range) {
         if (range == null)
             return;
         ranges.add(range);
     }
-
 
     public List<Range> getRanges() {
         return ranges;
@@ -108,7 +101,6 @@ abstract class AbstractGauge extends View {
     public void setRanges(List<Range> ranges) {
         this.ranges = ranges;
     }
-
 
     protected Paint getNeedlePaint() {
         if (needleColor == null) {
@@ -400,5 +392,4 @@ abstract class AbstractGauge extends View {
     public int getGaugeBackgroundColor() {
         return this.gaugeBGColor;
     }
-
 }

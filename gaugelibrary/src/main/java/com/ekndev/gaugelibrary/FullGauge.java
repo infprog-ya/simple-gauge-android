@@ -28,9 +28,8 @@ public class FullGauge extends AbstractGauge {
     private float sweepAngle = 360;
     private float startAngle = 270;
     private float gaugeBGWidth = 20f;
-    private boolean displayValuePoint = false;
+    public boolean displayValuePoint = false;
     protected boolean drawValueText = true;
-
 
     public FullGauge(Context context) {
         super(context);
@@ -103,7 +102,7 @@ public class FullGauge extends AbstractGauge {
         }
     }
 
-    private Paint getArrowPaint() {
+    public Paint getArrowPaint() {
         Paint color = new Paint(Paint.ANTI_ALIAS_FLAG);
         color.setStrokeWidth(4f);
         color.setStyle(Paint.Style.STROKE);
@@ -122,7 +121,6 @@ public class FullGauge extends AbstractGauge {
         canvas.restore();
     }
 
-
     private void drawValueText(Canvas canvas) {
         if (drawValueText) {
             canvas.save();
@@ -133,10 +131,7 @@ public class FullGauge extends AbstractGauge {
         }
     }
 
-
     protected Paint getRangePaintForValue(double value, List<Range> ranges) {
-
-
         Paint color = new Paint(Paint.ANTI_ALIAS_FLAG);
         color.setStrokeWidth(gaugeBGWidth);
         color.setStyle(Paint.Style.STROKE);

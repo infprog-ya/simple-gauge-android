@@ -41,7 +41,10 @@ dependencies {
 
 # Whats new
 
-New release avalible <a href="https://github.com/Gruzer/simple-gauge-android/releases">Read </a>
+Added animation for Arc gauge
+Eliminated some depreciations 
+
+New release avalible <a href="https://github.com/infprog-ya/simple-gauge-android/releases">Read </a>
 
 
 # Simple Usage
